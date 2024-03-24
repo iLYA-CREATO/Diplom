@@ -4,5 +4,18 @@ using UnityEngine;
 
 public class GemLocate : MonoBehaviour
 {
-    public  Transform[] gemLocations; // Массив с позициями гемов на карте
+    public List<Transform> gemLocations = new List<Transform>(); // Список с позициями гемов на карте
+    public GameObject WinPanel;
+    public ChampionGame championGame;
+    public void LateUpdate()
+    {
+        if(gemLocations.Count == 0)
+        {
+            championGame.WinChackChampion();
+            Debug.Log("Гемов более нету");
+            WinPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 }
+
