@@ -7,31 +7,74 @@ using UnityEngine;
 public class ChampionGame : MonoBehaviour
 {
     public GemWallet WalletGemPlayer;
-    public RaiseGemNPC[] RaiseGemNPC;
-    public int[] WinnerGem;
+    public ParametrsNPC[] parametrsNPC;
+    public int NPCValue = 7; // Количество NPC
 
-    public TextMeshProUGUI[] TextGem;
+    public List<List<object>> nestedList = new List<List<object>>(); // Создаем список для хранения значений
+
+    private bool IsAddList;// Просто флаг чтобы лист добавление в лист сработало 1 раз
+
     public TextMeshProUGUI[] TextName;
-    public void Start()
-    {
-        Debug.Log("Гемы игрока: " + WalletGemPlayer.GemRound);
-    }
+    public TextMeshProUGUI[] TextGem;
+    // Вызывается из GemLocate
     public void WinChackChampion()
     {
-        List<int> numbersList = new List<int>();
-        numbersList.Add(WalletGemPlayer.GemRound);
-        for (int i = 0; i < RaiseGemNPC.Length; i++)
+        UpDataGame();
+    }
+
+    public void UpDataGame()
+    {
+        if (IsAddList == false)
         {
-            numbersList.Add(RaiseGemNPC[i].GemNPC);
+            FillData();
+            //AddList();  // Просто проверка
+            LiderGame();
+            
         }
-        WinnerGem = numbersList.ToArray();
+    }
 
-        Array.Sort(WinnerGem);
-
-        for (int i = 0; i < WinnerGem.Length; i++)
+    public void LiderGame()
+    {
+        string name = null;
+        int gem = 0;
+        int Arr = 0;
+        foreach (var innerList in nestedList)
         {
-            TextGem[i].text = WinnerGem[i].ToString();
+            name = innerList[0] as string;
+            gem = Convert.ToInt32(innerList[1]);
+
+            TextName[Arr].text = name;
+            TextGem[Arr].text = gem.ToString();
+            Arr++;
         }
 
+        IsAddList = true;
+    }
+    public void FillData()
+    {
+        for(int i = 0; i < NPCValue;i++)
+        {
+            nestedList.Add(new List<object> { parametrsNPC[i].NameNPC, parametrsNPC[i].GemNPC});
+        }
+        nestedList.Add(new List<object> { WalletGemPlayer.Name, WalletGemPlayer.GemRound });
+        SortByAge();
+
+    }
+    public void SortByAge()
+    {
+        nestedList.Sort((x, y) => ((int)y[1]).CompareTo((int)x[1]));
+    }
+    // пример
+
+
+    // Просто проверка 
+    public void AddList()
+    {
+        foreach (List<object> innerList in nestedList)
+        {
+            string innerListAsString = string.Join(", ", innerList);
+            Debug.Log("Inner List: " + innerListAsString);
+        }
+        IsAddList = true;
     }
 }

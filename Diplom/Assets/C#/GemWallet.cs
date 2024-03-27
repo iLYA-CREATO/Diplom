@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GemWallet : MonoBehaviour
 {
+    public string Name;
     public int GemRound;
     public int GemGame;
 }

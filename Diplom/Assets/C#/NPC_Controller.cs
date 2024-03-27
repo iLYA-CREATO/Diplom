@@ -27,7 +27,7 @@ public class NPC_Controller : MonoBehaviour
     {
         if (gemLocate.gemLocations.Count == 0)
         {
-            Debug.LogWarning("No gem locations set");
+            Debug.Log("No gem locations set");
             return;
         }
         int RandomGem = Random.Range(0, gemLocate.gemLocations.Count);

@@ -7,7 +7,11 @@ public class GemLocate : MonoBehaviour
     public List<Transform> gemLocations = new List<Transform>(); // Список с позициями гемов на карте
     public GameObject WinPanel;
     public ChampionGame championGame;
-    public void LateUpdate()
+    public void Start()
+    {
+        Time.timeScale = 1;
+    }
+    public void Update()
     {
         if(gemLocations.Count == 0)
         {
