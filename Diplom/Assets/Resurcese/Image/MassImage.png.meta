@@ -107,6 +107,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,10 +139,10 @@ TextureImporter:
       name: MassImage_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 643
-        width: 294
-        height: 285
+        x: 18
+        y: 609
+        width: 1102
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96dcda2d2c9bfa948aece45cdda12630
-      internalID: 337285498
+      spriteID: 2ed54d57bc9614248aeb947054f6ec01
+      internalID: 2026288916
       vertices: []
       indices: 
       edges: []
@@ -147,10 +160,10 @@ TextureImporter:
       name: MassImage_1
       rect:
         serializedVersion: 2
-        x: 369
-        y: 643
-        width: 294
-        height: 285
+        x: 1160
+        y: 22
+        width: 445
+        height: 818
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b17bfb7975059e345b32ae50e4832267
-      internalID: 838494583
+      spriteID: 3e8665bc0d0e07e45bfeee8c520c01bf
+      internalID: -1148229021
       vertices: []
       indices: 
       edges: []
@@ -168,10 +181,10 @@ TextureImporter:
       name: MassImage_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 335
-        width: 691
-        height: 279
+        x: 1606
+        y: 768
+        width: 284
+        height: 286
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a3eca021e27c094796232f239f68684
-      internalID: -1713324855
+      spriteID: e145759cb427adf46b4a8ad29723e970
+      internalID: -392173014
       vertices: []
       indices: 
       edges: []
@@ -189,10 +202,10 @@ TextureImporter:
       name: MassImage_3
       rect:
         serializedVersion: 2
-        x: 1413
-        y: 45
-        width: 430
-        height: 430
+        x: 18
+        y: 117
+        width: 1102
+        height: 445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,29 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0a73a72fe45dea45902fe2f50805d6a
-      internalID: -680197035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MassImage_4
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 21
-        width: 691
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c83f0afa0805e44399048e41e18a7d7
-      internalID: 1513901940
+      spriteID: 5ff058a5a85f51e47896b8a1e4fd5e37
+      internalID: 1128838550
       vertices: []
       indices: 
       edges: []
@@ -230,7 +222,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3a9265c54152d2a4482315a62dd3ffcf
     internalID: 0
     vertices: []
     indices: 
@@ -238,11 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MassImage_0: 337285498
-      MassImage_1: 838494583
-      MassImage_2: -1713324855
-      MassImage_3: -680197035
-      MassImage_4: 1513901940
+      MassImage_0: 2026288916
+      MassImage_1: -1148229021
+      MassImage_2: -392173014
+      MassImage_3: 1128838550
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ChampionGame : MonoBehaviour
 {
-    public GemWallet WalletGemPlayer;
+    public ParametrsPlayer parametrsPlayer;
     public ParametrsNPC[] parametrsNPC;
     public int NPCValue = 7; // Количество NPC
 
@@ -27,7 +27,6 @@ public class ChampionGame : MonoBehaviour
         if (IsAddList == false)
         {
             FillData();
-            //AddList();  // Просто проверка
             LiderGame();
             
         }
@@ -56,7 +55,7 @@ public class ChampionGame : MonoBehaviour
         {
             nestedList.Add(new List<object> { parametrsNPC[i].NameNPC, parametrsNPC[i].GemNPC});
         }
-        nestedList.Add(new List<object> { WalletGemPlayer.Name, WalletGemPlayer.GemRound });
+        nestedList.Add(new List<object> { parametrsPlayer.Name, parametrsPlayer.GemRound });
         SortByAge();
 
     }
@@ -64,17 +63,9 @@ public class ChampionGame : MonoBehaviour
     {
         nestedList.Sort((x, y) => ((int)y[1]).CompareTo((int)x[1]));
     }
-    // пример
 
-
-    // Просто проверка 
-    public void AddList()
+    public void GemPlus()
     {
-        foreach (List<object> innerList in nestedList)
-        {
-            string innerListAsString = string.Join(", ", innerList);
-            Debug.Log("Inner List: " + innerListAsString);
-        }
-        IsAddList = true;
+        PlayerPrefs.SetInt("Gem", parametrsPlayer.GemRound);
     }
 }

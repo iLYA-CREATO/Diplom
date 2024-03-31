@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class NPC_Controller : MonoBehaviour
 {
     public GemLocate gemLocate;
-    private int currentGemIndex = 0;
     private NavMeshAgent navMeshAgent;
 
     void Start()
@@ -32,8 +31,6 @@ public class NPC_Controller : MonoBehaviour
         }
         int RandomGem = Random.Range(0, gemLocate.gemLocations.Count);
         navMeshAgent.SetDestination(gemLocate.gemLocations[RandomGem].position);
-
-        RandomGem = (RandomGem + 1) % gemLocate.gemLocations.Count;
     }
 
     void RemoveDestroyedGemsFromList()
@@ -41,7 +38,7 @@ public class NPC_Controller : MonoBehaviour
         gemLocate.gemLocations.RemoveAll(item => item == null);
     }
 
-    // Добавьте этот метод, чтобы удаление уничтоженных объектов из списка происходило в каждом кадре
+  
     void LateUpdate()
     {
         RemoveDestroyedGemsFromList();

@@ -5,14 +5,18 @@ ScriptsOnlyBuild:
     - ChampionGame
     - FloatingJoystick
     - GemLocate
-    - GemWallet
+    - LevelGame
     - NPC_Controller
     - PC_One
     - ParametrsNPC
+    - ParametrsPlayer
     - RaiseGem
+    - RegisterName
     - SceneController
     - StartAnimation
     - TextGem
+    Unity.AI.Navigation.Editor.dll:
+    - Unity.AI.Navigation.Editor.NavMeshAssetManager
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.PlasticSCM.Editor.dll:
@@ -52,6 +56,10 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.Graphing.GraphObject
+    - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
+    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
     Unity.TextMeshPro:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -60,6 +68,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -67,8 +76,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -97,6 +108,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.RectMask2D
   serializedClasses:
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.UI.DebugUIPrefabBundle
@@ -110,6 +123,11 @@ ScriptsOnlyBuild:
     - TMPro.TMP_GlyphAdjustmentRecord
     - TMPro.TMP_GlyphPairAdjustmentRecord
     - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
@@ -182,8 +200,17 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
+    fullTypeName: LevelGame
+    methodName: LeftGame
+  - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: NextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelGame
+    methodName: RightGame
+  - assembly: Assembly-CSharp
+    fullTypeName: RegisterName
+    methodName: InputName
   - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: NextScene
@@ -213,24 +240,30 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 16628}
-    - Class: 114
-      Script: {instanceID: 16630}
+      Script: {instanceID: 16658}
     - Class: 114
       Script: {instanceID: 16660}
     - Class: 114
-      Script: {instanceID: 16662}
+      Script: {instanceID: 16720}
     - Class: 114
-      Script: {instanceID: 16722}
+      Script: {instanceID: 17512}
     - Class: 114
       Script: {instanceID: 17904}
     - Class: 114
@@ -242,32 +275,38 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 19338}
     - Class: 114
-      Script: {instanceID: 20984}
+      Script: {instanceID: 20986}
     - Class: 114
-      Script: {instanceID: 21458}
+      Script: {instanceID: 21460}
     - Class: 114
-      Script: {instanceID: 21718}
+      Script: {instanceID: 21720}
     - Class: 114
-      Script: {instanceID: 21814}
+      Script: {instanceID: 21816}
     - Class: 114
-      Script: {instanceID: 21954}
+      Script: {instanceID: 21956}
     - Class: 114
-      Script: {instanceID: 22260}
+      Script: {instanceID: 22262}
     - Class: 114
-      Script: {instanceID: 22456}
+      Script: {instanceID: 22458}
     - Class: 114
-      Script: {instanceID: 22842}
+      Script: {instanceID: 22844}
     - Class: 114
-      Script: {instanceID: 22892}
+      Script: {instanceID: 22894}
     - Class: 114
-      Script: {instanceID: 23836}
+      Script: {instanceID: 23838}
     - Class: 114
-      Script: {instanceID: 24318}
+      Script: {instanceID: 24138}
+    - Class: 114
+      Script: {instanceID: 24322}
+    - Class: 114
+      Script: {instanceID: 132998}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -309,23 +348,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 16658}
+    - Class: 114
       Script: {instanceID: 16660}
     - Class: 114
-      Script: {instanceID: 16662}
+      Script: {instanceID: 16720}
     - Class: 114
-      Script: {instanceID: 16722}
+      Script: {instanceID: 16888}
     - Class: 114
       Script: {instanceID: 18096}
     - Class: 114
       Script: {instanceID: 18374}
     - Class: 114
-      Script: {instanceID: 21458}
+      Script: {instanceID: 20102}
     - Class: 114
-      Script: {instanceID: 21814}
+      Script: {instanceID: 20472}
     - Class: 114
-      Script: {instanceID: 22456}
+      Script: {instanceID: 21194}
     - Class: 114
-      Script: {instanceID: 22892}
+      Script: {instanceID: 21460}
+    - Class: 114
+      Script: {instanceID: 21816}
+    - Class: 114
+      Script: {instanceID: 22458}
+    - Class: 114
+      Script: {instanceID: 22894}
+    - Class: 114
+      Script: {instanceID: 34258}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -366,6 +415,8 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 16654}
+    - Class: 114
       Script: {instanceID: 16656}
     - Class: 114
       Script: {instanceID: 16658}
@@ -374,17 +425,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16662}
     - Class: 114
-      Script: {instanceID: 16664}
+      Script: {instanceID: 16668}
     - Class: 114
-      Script: {instanceID: 16670}
+      Script: {instanceID: 16720}
     - Class: 114
-      Script: {instanceID: 16722}
+      Script: {instanceID: 16888}
     - Class: 114
-      Script: {instanceID: 16890}
+      Script: {instanceID: 17378}
     - Class: 114
-      Script: {instanceID: 17380}
-    - Class: 114
-      Script: {instanceID: 17502}
+      Script: {instanceID: 17500}
     - Class: 114
       Script: {instanceID: 17586}
     - Class: 114
@@ -422,63 +471,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 20458}
     - Class: 114
-      Script: {instanceID: 21216}
+      Script: {instanceID: 21218}
     - Class: 114
-      Script: {instanceID: 21280}
+      Script: {instanceID: 21282}
     - Class: 114
-      Script: {instanceID: 21370}
+      Script: {instanceID: 21372}
     - Class: 114
-      Script: {instanceID: 21390}
+      Script: {instanceID: 21392}
     - Class: 114
-      Script: {instanceID: 21458}
+      Script: {instanceID: 21460}
     - Class: 114
-      Script: {instanceID: 21466}
+      Script: {instanceID: 21468}
     - Class: 114
-      Script: {instanceID: 21746}
+      Script: {instanceID: 21748}
     - Class: 114
-      Script: {instanceID: 21750}
+      Script: {instanceID: 21752}
     - Class: 114
-      Script: {instanceID: 21770}
+      Script: {instanceID: 21772}
     - Class: 114
-      Script: {instanceID: 21814}
+      Script: {instanceID: 21816}
     - Class: 114
-      Script: {instanceID: 22096}
+      Script: {instanceID: 22098}
     - Class: 114
-      Script: {instanceID: 22442}
+      Script: {instanceID: 22444}
     - Class: 114
-      Script: {instanceID: 22456}
+      Script: {instanceID: 22458}
     - Class: 114
-      Script: {instanceID: 22544}
+      Script: {instanceID: 22546}
     - Class: 114
-      Script: {instanceID: 22550}
+      Script: {instanceID: 22552}
     - Class: 114
-      Script: {instanceID: 22698}
+      Script: {instanceID: 22700}
     - Class: 114
-      Script: {instanceID: 22742}
+      Script: {instanceID: 22744}
     - Class: 114
-      Script: {instanceID: 22802}
+      Script: {instanceID: 22804}
     - Class: 114
-      Script: {instanceID: 22892}
+      Script: {instanceID: 22894}
     - Class: 114
-      Script: {instanceID: 22908}
+      Script: {instanceID: 22910}
     - Class: 114
-      Script: {instanceID: 23040}
+      Script: {instanceID: 23042}
     - Class: 114
-      Script: {instanceID: 23212}
+      Script: {instanceID: 23214}
     - Class: 114
-      Script: {instanceID: 23352}
+      Script: {instanceID: 23354}
     - Class: 114
-      Script: {instanceID: 23400}
+      Script: {instanceID: 23402}
     - Class: 114
-      Script: {instanceID: 23432}
+      Script: {instanceID: 23434}
     - Class: 114
-      Script: {instanceID: 23822}
+      Script: {instanceID: 23824}
     - Class: 114
-      Script: {instanceID: 24632}
+      Script: {instanceID: 24636}
     - Class: 114
-      Script: {instanceID: 24976}
+      Script: {instanceID: 24980}
     - Class: 114
-      Script: {instanceID: 25576}
+      Script: {instanceID: 227032}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -496,18 +545,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 9493f30b538e28489a4100fd9d3bd6f1
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ChampionGame
-  - hash:
-      serializedVersion: 2
-      Hash: 4627646a76fea956852b82e28c176406
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: NPC_Controller
   - hash:
       serializedVersion: 2
       Hash: d41ab9b5ea92474f9c0a6937a0607ce1
@@ -648,6 +685,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 4627646a76fea956852b82e28c176406
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: NPC_Controller
+  - hash:
+      serializedVersion: 2
       Hash: ad49e20f31ed572e586aa8bbaafb591b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -702,7 +745,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerGroup
   - hash:
       serializedVersion: 2
-      Hash: e4b19cb4646bb2903e770279254fb8da
+      Hash: fdb5c05e47a05de83790f1f04c4e02ec
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RaiseGem
@@ -804,7 +847,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: bf2d4210c11f8ab516c3838c07d3ce2f
+      Hash: 47dc53f777fa5b628856366fd1b471ea
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PC_One
@@ -972,7 +1015,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerValueTuple
   - hash:
       serializedVersion: 2
-      Hash: 46f32b299acf1d9d0d4a9b7e58b8a48c
+      Hash: 05ac27a6f4e2f3a2ff217f0c7e911167
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: TextGem
@@ -1156,6 +1199,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 83fea932659a6edd4a5d5d20e00235cd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RegisterName
   - hash:
       serializedVersion: 2
       Hash: 52840a82fb83b3a7df342e354c4815e4
@@ -1434,10 +1483,10 @@ ScriptsOnlyBuild:
     className: UnityOnDeselectMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 78318a49e271c5f3dc9728c106869f71
+      Hash: 1f08e70435d71bebde65b8f295b4a59f
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: GemWallet
+    className: ParametrsPlayer
   - hash:
       serializedVersion: 2
       Hash: a9f0153fc675e1f4ade818b83e4ff0c1
@@ -1554,7 +1603,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerBitField
   - hash:
       serializedVersion: 2
-      Hash: e139f7c66924b974ad4a49c4bde2240b
+      Hash: 2260c3352d83652c89f3a86270cc19d2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CameraPlayer
@@ -1800,6 +1849,12 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 311312de74c091d45e047be90e0244be
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ChampionGame
+  - hash:
+      serializedVersion: 2
       Hash: 2cc5af0f17cef9c717df88c8c7e4c9aa
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine
@@ -1942,9 +1997,27 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 60740e1143c0796204bb4370006e3f63
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LevelGame
+  - hash:
+      serializedVersion: 2
+      Hash: 5a8fd6dae03f3b7eb756550dedf4afac
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerMovement
+  - hash:
+      serializedVersion: 2
+      Hash: e65ad9cbb55f1928097c06b289bc846d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerFollow
   platform: 13
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/MenuGame.unity
   - Assets/Scenes/GameOne.unity
-  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.05/0.05.apk
+  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.15/0.15.apk

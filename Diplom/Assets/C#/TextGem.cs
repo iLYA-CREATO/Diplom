@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TextGem : MonoBehaviour
 {
-    [SerializeField]private GemWallet gemWallet;
+    [SerializeField]private ParametrsPlayer gemWallet;
     public TextMeshProUGUI TextGemRound;
 
     public void Start()
