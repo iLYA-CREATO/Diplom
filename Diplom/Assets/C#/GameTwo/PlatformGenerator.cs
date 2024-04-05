@@ -14,6 +14,7 @@ public class PlatformGenerator : MonoBehaviour
 
     public void GenerateObjects()
     {
+
         foreach (Transform spawnPoint in spawnPoints)
         {
             Instantiate(objectPrefab, spawnPoint.position, spawnPoint.rotation);

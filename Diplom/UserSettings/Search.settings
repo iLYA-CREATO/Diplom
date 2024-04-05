@@ -11,6 +11,9 @@ scopes = {
 	"last_search.E8DA15E5" = ""
 	"OpenInspectorPreview.E8DA15E5" = "0"
 	"currentGroup.E8DA15E5" = "all"
+	"last_search.388C2F70" = ""
+	"OpenInspectorPreview.388C2F70" = "0"
+	"currentGroup.388C2F70" = "all"
 }
 providers = {
 	packages = {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1390746135908487220}
   - component: {fileID: 3823611632976090723}
   - component: {fileID: 7083719695004746437}
+  - component: {fileID: 629079744963380113}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc62e00450c080843993a703e53d1baa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,47 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &629079744963380113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830741923283278008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9daaac925f81c324aa364e839e4db121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0.0022239685, b: 1, a: 0}
+  - {r: 0, g: 1, b: 0.04445076, a: 0}
+  - {r: 0.9780209, g: 1, b: 0, a: 0}
+  - {r: 0.5566038, g: 0, b: 0.36759597, a: 0}
+  - {r: 0.9261813, g: 0, b: 1, a: 0}
+  - {r: 1, g: 0.5851397, b: 0, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0.4716981, g: 0.14321622, b: 0, a: 0}
+  - {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
+  - {r: 0, g: 1, b: 1, a: 0}
+  colors: 0
+  ColorCube: 
+  Arr: 0
+  ColorName:
+  - "\u043A\u0440\u0430\u0441\u043D\u044B\u0439"
+  - "\u0441\u0438\u043D\u0438\u0439"
+  - "\u0437\u0435\u043B\u0451\u043D\u044B\u0439"
+  - "\u0436\u0451\u043B\u0442\u044B\u0439"
+  - "\u0444\u0438\u043E\u043B\u0435\u0442\u043E\u0432\u044B\u0439"
+  - "\u0440\u043E\u0437\u043E\u0432\u044B\u0439"
+  - "\u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0439"
+  - "\u0431\u0435\u043B\u044B\u0439"
+  - "\u0447\u0435\u0440\u043D\u044B\u0439"
+  - "\u043A\u043E\u0440\u0438\u0447\u043D\u0435\u0432\u044B\u0439"
+  - "\u0441\u0435\u0440\u044B\u0439"
+  - "\u0433\u043E\u043B\u0443\u0431\u043E\u0439"
+  - "\u043E\u043B\u0438\u0432\u043A\u043E\u0432\u044B\u0439"
+  - "\u0431\u0438\u0440\u044E\u0437\u043E\u0432\u044B\u0439"
+  - "\u043F\u0443\u0440\u043F\u0443\u0440\u043D\u044B\u0439"
