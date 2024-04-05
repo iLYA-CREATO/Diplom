@@ -13,43 +13,43 @@ public class NPC_Controller : MonoBehaviour
     public Animator animatorDarSoul;
     public Animator animatorStelsWit;
     float currentSpeed;
-    int Arr;
-    void Awake()
+    void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        SetDestinationToNextGem();
     }
 
-    public void Start()
+    void Update()
     {
-        MoveToNextItem();
+        if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.1f)
+        {
+            SetDestinationToNextGem();
+        }
     }
+
+    void SetDestinationToNextGem()
+    {
+        if (gemLocate.gemLocations.Count == 0)
+        {
+            Debug.LogWarning("No gem locations set");
+            Debug.Log("No gem locations set");
+            return;
+        }
+        int RandomGem = Random.Range(0, gemLocate.gemLocations.Count);
+        navMeshAgent.SetDestination(gemLocate.gemLocations[RandomGem].position);
+
+        RandomGem = (RandomGem + 1) % gemLocate.gemLocations.Count;
+    }
+
+    void RemoveDestroyedGemsFromList()
+    {
+        gemLocate.gemLocations.RemoveAll(item => item == null);
+    }
+
     void LateUpdate()
     {
         AnimController();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Gem"))
-        {
-            MoveToNextItem();
-            Destroy(other.gameObject);
-            Debug.Log("Destroy");
-        }
-    }
-
-    private void MoveToNextItem()
-    {
-        foreach (Transform item in gemLocate.gemLocations)
-        {
-            if (item.gameObject != null)
-            {
-                navMeshAgent.SetDestination(item.transform.position);
-                return;
-            }
-        }
-        // Если все предметы собраны
-        navMeshAgent.SetDestination(navMeshAgent.transform.position);
+        RemoveDestroyedGemsFromList();
     }
     public void AnimController()
     {

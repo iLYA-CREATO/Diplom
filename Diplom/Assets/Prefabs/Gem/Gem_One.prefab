@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8075847244976639284}
   - component: {fileID: 8136024575875185023}
   - component: {fileID: 2448688568627874721}
+  - component: {fileID: 4072539287999662129}
   m_Layer: 0
   m_Name: GemOne
   m_TagString: Gem
@@ -122,6 +123,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.002945017, y: 0.005822122, z: 0.0025654258}
   m_Center: {x: -0.0000037321006, y: -0.000047383248, z: 0.00010891142}
+--- !u!114 &4072539287999662129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195241644316706722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa92bd7725aa524482450a4cb8433f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GemAnim: {fileID: 2467750944319388788}
 --- !u!1 &2467750944319388788
 GameObject:
   m_ObjectHideFlags: 0

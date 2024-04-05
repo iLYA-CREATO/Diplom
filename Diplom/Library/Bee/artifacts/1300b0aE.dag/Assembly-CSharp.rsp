@@ -371,6 +371,7 @@
 "Assets/C#/GameTwo/PlatformGenerator.cs"
 "Assets/C#/GemLocate.cs"
 "Assets/C#/LevelGame.cs"
+"Assets/C#/NPC/GemAnimDestroy.cs"
 "Assets/C#/NPC/NPC_Controller.cs"
 "Assets/C#/NPC/ParametrsNPC.cs"
 "Assets/C#/NPC/RandomSkin.cs"

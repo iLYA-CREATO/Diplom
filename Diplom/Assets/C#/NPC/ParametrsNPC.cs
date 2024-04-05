@@ -19,8 +19,7 @@ public class ParametrsNPC : MonoBehaviour
         if (other.tag == "Gem")
         {
             Debug.Log("NPC gem up");
-            other.gameObject.SetActive(false);
-            gemLocate.gemLocations.RemoveAll(item => item == null);
+            Destroy(other.gameObject);
             GemNPC++;
         }
     }

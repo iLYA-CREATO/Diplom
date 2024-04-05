@@ -22,14 +22,20 @@ public class GemLocate : MonoBehaviour
         }
         gem = null;
     }
+
+    bool IsWinGame = false;
     public void LateUpdate()
     {
         if (gemLocations.Count == 0)
         {
-            championGame.WinChackChampion();
-            Debug.Log("Гемов более нету");
-            WinPanel.SetActive(true);
-            Time.timeScale = 0;
+            if(IsWinGame == false)
+            {
+                championGame.WinChackChampion();
+                Debug.Log("Гемов более нету");
+                WinPanel.SetActive(true);
+                Time.timeScale = 0;
+                IsWinGame = true;
+            }
         }
     }
 }
