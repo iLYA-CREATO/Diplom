@@ -5,19 +5,26 @@ ScriptsOnlyBuild:
     - ChampionGame
     - DizactivInfo
     - FloatingJoystick
+    - GemAnimDestroy
     - GemLocate
     - LevelGame
+    - MySkins
     - NPC_Controller
+    - OpenForm
     - OppenInfo
     - PC_One
     - ParametrsNPC
     - ParametrsPlayer
     - RaiseGem
+    - RandomSkin
     - RegisterName
     - SceneController
+    - ShopSkins
     - StartAnimation
     - TextGem
     - Wallet
+    Unity.AI.Navigation.Editor.dll:
+    - Unity.AI.Navigation.Editor.NavigationWindow
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.PlasticSCM.Editor.dll:
@@ -75,8 +82,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -197,17 +206,44 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _OpenForm
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _ClouseForm
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _OpenForm
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _ClouseForm
+  - assembly: Assembly-CSharp
     fullTypeName: LevelGame
     methodName: LeftGame
   - assembly: Assembly-CSharp
     fullTypeName: OppenInfo
     methodName: OpenInfo
   - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: BackSkin
+  - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: NextScene
   - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: NextSkin
+  - assembly: Assembly-CSharp
     fullTypeName: OppenInfo
     methodName: OpenInfo
+  - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: BuySkins
+  - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: GetSkins
+  - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: RegButtonFunk
   - assembly: Assembly-CSharp
     fullTypeName: LevelGame
     methodName: RightGame
@@ -215,13 +251,16 @@ ScriptsOnlyBuild:
     fullTypeName: RegisterName
     methodName: InputName
   - assembly: Assembly-CSharp
+    fullTypeName: Wallet
+    methodName: plusGem
+  - assembly: Assembly-CSharp
     fullTypeName: ChampionGame
     methodName: GemPlus
   - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: NextScene
   sceneClasses:
-    Assets/Scenes/GameOne.unity:
+    Assets/Scenes/Gems.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -269,41 +308,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16726}
     - Class: 114
-      Script: {instanceID: 17520}
+      Script: {instanceID: 17522}
     - Class: 114
-      Script: {instanceID: 17912}
+      Script: {instanceID: 17914}
     - Class: 114
-      Script: {instanceID: 18106}
+      Script: {instanceID: 18108}
     - Class: 114
-      Script: {instanceID: 18384}
+      Script: {instanceID: 18386}
     - Class: 114
-      Script: {instanceID: 18418}
+      Script: {instanceID: 18420}
     - Class: 114
-      Script: {instanceID: 19352}
+      Script: {instanceID: 18586}
     - Class: 114
-      Script: {instanceID: 21000}
+      Script: {instanceID: 19358}
     - Class: 114
-      Script: {instanceID: 21474}
+      Script: {instanceID: 20174}
     - Class: 114
-      Script: {instanceID: 21734}
+      Script: {instanceID: 21008}
     - Class: 114
-      Script: {instanceID: 21830}
+      Script: {instanceID: 21484}
     - Class: 114
-      Script: {instanceID: 21970}
+      Script: {instanceID: 21744}
     - Class: 114
-      Script: {instanceID: 22278}
+      Script: {instanceID: 21840}
     - Class: 114
-      Script: {instanceID: 22474}
+      Script: {instanceID: 21980}
     - Class: 114
-      Script: {instanceID: 22860}
+      Script: {instanceID: 22164}
     - Class: 114
-      Script: {instanceID: 22910}
+      Script: {instanceID: 22290}
     - Class: 114
-      Script: {instanceID: 23858}
+      Script: {instanceID: 22486}
     - Class: 114
-      Script: {instanceID: 24158}
+      Script: {instanceID: 22872}
     - Class: 114
-      Script: {instanceID: 24342}
+      Script: {instanceID: 22922}
+    - Class: 114
+      Script: {instanceID: 23870}
+    - Class: 114
+      Script: {instanceID: 24170}
+    - Class: 114
+      Script: {instanceID: 24354}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -341,11 +386,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -362,32 +417,42 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17318}
     - Class: 114
-      Script: {instanceID: 18106}
+      Script: {instanceID: 17436}
     - Class: 114
-      Script: {instanceID: 18384}
+      Script: {instanceID: 18108}
     - Class: 114
-      Script: {instanceID: 19036}
+      Script: {instanceID: 18386}
     - Class: 114
-      Script: {instanceID: 19312}
+      Script: {instanceID: 19042}
     - Class: 114
-      Script: {instanceID: 20116}
+      Script: {instanceID: 19318}
     - Class: 114
-      Script: {instanceID: 20486}
+      Script: {instanceID: 20122}
     - Class: 114
-      Script: {instanceID: 21208}
+      Script: {instanceID: 20174}
     - Class: 114
-      Script: {instanceID: 21474}
+      Script: {instanceID: 20494}
     - Class: 114
-      Script: {instanceID: 21830}
+      Script: {instanceID: 21216}
     - Class: 114
-      Script: {instanceID: 22474}
+      Script: {instanceID: 21438}
     - Class: 114
-      Script: {instanceID: 22910}
+      Script: {instanceID: 21484}
     - Class: 114
-      Script: {instanceID: 23676}
+      Script: {instanceID: 21840}
+    - Class: 114
+      Script: {instanceID: 22164}
+    - Class: 114
+      Script: {instanceID: 22486}
+    - Class: 114
+      Script: {instanceID: 22922}
+    - Class: 114
+      Script: {instanceID: 23688}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -443,101 +508,101 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17386}
     - Class: 114
-      Script: {instanceID: 17508}
+      Script: {instanceID: 17510}
     - Class: 114
-      Script: {instanceID: 17594}
+      Script: {instanceID: 17596}
     - Class: 114
-      Script: {instanceID: 17704}
+      Script: {instanceID: 17706}
     - Class: 114
-      Script: {instanceID: 17816}
+      Script: {instanceID: 17818}
     - Class: 114
-      Script: {instanceID: 18106}
+      Script: {instanceID: 18108}
     - Class: 114
-      Script: {instanceID: 18250}
+      Script: {instanceID: 18252}
     - Class: 114
-      Script: {instanceID: 18384}
+      Script: {instanceID: 18386}
     - Class: 114
-      Script: {instanceID: 18996}
+      Script: {instanceID: 19002}
     - Class: 114
-      Script: {instanceID: 19096}
+      Script: {instanceID: 19102}
     - Class: 114
-      Script: {instanceID: 19288}
+      Script: {instanceID: 19294}
     - Class: 114
-      Script: {instanceID: 19344}
+      Script: {instanceID: 19350}
     - Class: 114
-      Script: {instanceID: 19434}
+      Script: {instanceID: 19440}
     - Class: 114
-      Script: {instanceID: 19820}
+      Script: {instanceID: 19826}
     - Class: 114
-      Script: {instanceID: 19824}
+      Script: {instanceID: 19830}
     - Class: 114
-      Script: {instanceID: 19960}
+      Script: {instanceID: 19966}
     - Class: 114
-      Script: {instanceID: 19996}
+      Script: {instanceID: 20002}
     - Class: 114
-      Script: {instanceID: 20136}
+      Script: {instanceID: 20142}
     - Class: 114
-      Script: {instanceID: 20346}
+      Script: {instanceID: 20354}
     - Class: 114
-      Script: {instanceID: 20472}
+      Script: {instanceID: 20480}
     - Class: 114
-      Script: {instanceID: 21232}
+      Script: {instanceID: 21240}
     - Class: 114
-      Script: {instanceID: 21296}
+      Script: {instanceID: 21304}
     - Class: 114
-      Script: {instanceID: 21386}
+      Script: {instanceID: 21394}
     - Class: 114
-      Script: {instanceID: 21406}
+      Script: {instanceID: 21414}
     - Class: 114
-      Script: {instanceID: 21474}
+      Script: {instanceID: 21484}
     - Class: 114
-      Script: {instanceID: 21482}
+      Script: {instanceID: 21492}
     - Class: 114
-      Script: {instanceID: 21762}
+      Script: {instanceID: 21772}
     - Class: 114
-      Script: {instanceID: 21766}
+      Script: {instanceID: 21776}
     - Class: 114
-      Script: {instanceID: 21786}
+      Script: {instanceID: 21796}
     - Class: 114
-      Script: {instanceID: 21830}
+      Script: {instanceID: 21840}
     - Class: 114
-      Script: {instanceID: 22114}
+      Script: {instanceID: 22124}
     - Class: 114
-      Script: {instanceID: 22460}
+      Script: {instanceID: 22472}
     - Class: 114
-      Script: {instanceID: 22474}
+      Script: {instanceID: 22486}
     - Class: 114
-      Script: {instanceID: 22562}
+      Script: {instanceID: 22574}
     - Class: 114
-      Script: {instanceID: 22568}
+      Script: {instanceID: 22580}
     - Class: 114
-      Script: {instanceID: 22716}
+      Script: {instanceID: 22728}
     - Class: 114
-      Script: {instanceID: 22760}
+      Script: {instanceID: 22772}
     - Class: 114
-      Script: {instanceID: 22820}
+      Script: {instanceID: 22832}
     - Class: 114
-      Script: {instanceID: 22910}
+      Script: {instanceID: 22922}
     - Class: 114
-      Script: {instanceID: 22926}
+      Script: {instanceID: 22938}
     - Class: 114
-      Script: {instanceID: 23058}
+      Script: {instanceID: 23070}
     - Class: 114
-      Script: {instanceID: 23230}
+      Script: {instanceID: 23242}
     - Class: 114
-      Script: {instanceID: 23370}
+      Script: {instanceID: 23382}
     - Class: 114
-      Script: {instanceID: 23420}
+      Script: {instanceID: 23432}
     - Class: 114
-      Script: {instanceID: 23452}
+      Script: {instanceID: 23464}
     - Class: 114
-      Script: {instanceID: 23844}
+      Script: {instanceID: 23856}
     - Class: 114
-      Script: {instanceID: 24656}
+      Script: {instanceID: 24668}
     - Class: 114
-      Script: {instanceID: 25002}
+      Script: {instanceID: 25012}
     - Class: 114
-      Script: {instanceID: 27178}
+      Script: {instanceID: 217230}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -683,6 +748,12 @@ ScriptsOnlyBuild:
     className: FixedJoystick
   - hash:
       serializedVersion: 2
+      Hash: 5e63efa1c1e22775d8a39ea8c6dab4e4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ShopSkins
+  - hash:
+      serializedVersion: 2
       Hash: b12640dfdb5966813e9dd838893e6c4a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -701,7 +772,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 0160f7c97159760dfde8f27617154630
+      Hash: 993390b9e06b6a508d9b5f300da23202
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NPC_Controller
@@ -761,7 +832,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerGroup
   - hash:
       serializedVersion: 2
-      Hash: fdb5c05e47a05de83790f1f04c4e02ec
+      Hash: 70d0213d59319e7a506201569f76f16b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RaiseGem
@@ -869,7 +940,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 47dc53f777fa5b628856366fd1b471ea
+      Hash: 185b187adb6460c9c2f8ecf9483679fe
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PC_One
@@ -909,6 +980,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 7cde1d2a7163adb7fcfeca14b619c9be
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GemAnimDestroy
+  - hash:
+      serializedVersion: 2
+      Hash: 904789ca817fe5c3c483539006843f2c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CubeSettings
   - hash:
       serializedVersion: 2
       Hash: b98001682cba83786775c9e415b89a61
@@ -1199,6 +1282,12 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+      Hash: 811a41e2f450f71cc2393661014e6a76
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RandomSkin
+  - hash:
+      serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1415,10 +1504,10 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerVector3
   - hash:
       serializedVersion: 2
-      Hash: 191cd500c627cd6682ef6f70b8e47f2c
-    assemblyName: Unity.VisualScripting.Core
-    namespaceName: Unity.VisualScripting
-    className: UnityOnCollisionEnter2DMessageListener
+      Hash: bfe1768f950ae43fc63693a512bbb86c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: OpenForm
   - hash:
       serializedVersion: 2
       Hash: 0c0b64d103fe555d830e8ca206abd12a
@@ -1431,6 +1520,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: WarpTextExample
+  - hash:
+      serializedVersion: 2
+      Hash: 191cd500c627cd6682ef6f70b8e47f2c
+    assemblyName: Unity.VisualScripting.Core
+    namespaceName: Unity.VisualScripting
+    className: UnityOnCollisionEnter2DMessageListener
   - hash:
       serializedVersion: 2
       Hash: 17f82e3e7d8f8b07a270a4aad9bfe79d
@@ -1547,13 +1642,19 @@ ScriptsOnlyBuild:
     className: UIFoldout
   - hash:
       serializedVersion: 2
+      Hash: ec1a343e31894004ea9420b72213594b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MySkins
+  - hash:
+      serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: Benchmark02
   - hash:
       serializedVersion: 2
-      Hash: 55c9d020c17e7ada3d0ec4b63df93473
+      Hash: 9eed3a1d470d876639f40279f90aee51
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GemLocate
@@ -1919,7 +2020,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: bbd628417e833f683329fbe85d17bded
+      Hash: f3fbfb2d7228ec49ac8db5dc79c86ee1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ParametrsNPC
@@ -1965,12 +2066,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro
     className: TMP_PhoneNumberValidator
-  - hash:
-      serializedVersion: 2
-      Hash: 34a89398456e774a5d0dccbe58d11924
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: BlocStats
   - hash:
       serializedVersion: 2
       Hash: c4ae0ec287bc3cde0bc98e1a65f9cef7
@@ -2059,5 +2154,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/MenuGame.unity
-  - Assets/Scenes/GameOne.unity
-  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.20/0.20.apk
+  - Assets/Scenes/Gems.unity
+  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.30/0.30.apk
