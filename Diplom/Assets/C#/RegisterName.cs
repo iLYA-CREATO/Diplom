@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class RegisterName : MonoBehaviour
 {
-    public GameObject PanelRegisterName;
+    [SerializeField] private GameObject RegisterForm;
+    [SerializeField] private GameObject MenuForm;
     public string RegisterNamePlayer;
     public TMP_InputField RegisterNameInputField;
 
@@ -11,12 +12,13 @@ public class RegisterName : MonoBehaviour
     {
        if (PlayerPrefs.HasKey("RegisterNamePlayer"))
         {
-            PanelRegisterName.SetActive(false);
+            RegisterForm.SetActive(false);
+            MenuForm.SetActive(true);
             RegisterNamePlayer = PlayerPrefs.GetString("RegisterNamePlayer");
         }
        else
         {
-            PanelRegisterName.SetActive(true);
+            RegisterForm.SetActive(true);
         }
     }
 
@@ -31,7 +33,8 @@ public class RegisterName : MonoBehaviour
         {
             RegisterNamePlayer = RegisterNameInputField.text;
             Debug.Log("Ваше имя: " + RegisterNamePlayer);
-            PanelRegisterName.SetActive(false);
+            RegisterForm.SetActive(false);
+            MenuForm.SetActive(true);
             PlayerPrefs.SetString("RegisterNamePlayer", RegisterNamePlayer);
         }
     }

@@ -1,10 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioController
+    - AudioGame
     - CameraPlayer
     - ChampionGame
+    - CubeSettings
     - DizactivInfo
+    - EndGame
     - FloatingJoystick
+    - GameColor
     - GemAnimDestroy
     - GemLocate
     - LevelGame
@@ -15,11 +20,13 @@ ScriptsOnlyBuild:
     - PC_One
     - ParametrsNPC
     - ParametrsPlayer
-    - RaiseGem
+    - PauseGame
+    - PlatformGenerator
     - RandomSkin
     - RegisterName
     - SceneController
     - ShopSkins
+    - Sound
     - StartAnimation
     - TextGem
     - Wallet
@@ -116,6 +123,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.Slider
   serializedClasses:
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.UI.DebugUIPrefabBundle
@@ -160,6 +168,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.Scrollbar/ScrollEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
@@ -212,29 +221,77 @@ ScriptsOnlyBuild:
     fullTypeName: OpenForm
     methodName: _ClouseForm
   - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: OpenForm
     methodName: _OpenForm
   - assembly: Assembly-CSharp
     fullTypeName: OpenForm
     methodName: _ClouseForm
   - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: LevelGame
     methodName: LeftGame
   - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: OppenInfo
     methodName: OpenInfo
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
   - assembly: Assembly-CSharp
     fullTypeName: ShopSkins
     methodName: BackSkin
   - assembly: Assembly-CSharp
-    fullTypeName: SceneController
-    methodName: NextScene
+    fullTypeName: ShopSkins
+    methodName: RegButtonFunk
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _OpenForm
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _ClouseForm
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelGame
+    methodName: OpenLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
   - assembly: Assembly-CSharp
     fullTypeName: ShopSkins
     methodName: NextSkin
   - assembly: Assembly-CSharp
+    fullTypeName: ShopSkins
+    methodName: RegButtonFunk
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _OpenForm
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenForm
+    methodName: _ClouseForm
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: OppenInfo
     methodName: OpenInfo
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
   - assembly: Assembly-CSharp
     fullTypeName: ShopSkins
     methodName: BuySkins
@@ -245,11 +302,26 @@ ScriptsOnlyBuild:
     fullTypeName: ShopSkins
     methodName: RegButtonFunk
   - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: LevelGame
     methodName: RightGame
   - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
+    fullTypeName: AudioController
+    methodName: AcceptSettings
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
+  - assembly: Assembly-CSharp
     fullTypeName: RegisterName
     methodName: InputName
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: PlaySound
   - assembly: Assembly-CSharp
     fullTypeName: Wallet
     methodName: plusGem
@@ -259,7 +331,121 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: SceneController
     methodName: NextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: SceneController
+    methodName: NextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseGame
+    methodName: OnEnableFormPause
+  - assembly: Assembly-CSharp
+    fullTypeName: SceneController
+    methodName: NextScene
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseGame
+    methodName: OnDizableFormPause
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseGame
+    methodName: OnDizableFormPause
   sceneClasses:
+    Assets/Scenes/Color.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16664}
+    - Class: 114
+      Script: {instanceID: 16666}
+    - Class: 114
+      Script: {instanceID: 16726}
+    - Class: 114
+      Script: {instanceID: 18108}
+    - Class: 114
+      Script: {instanceID: 18386}
+    - Class: 114
+      Script: {instanceID: 18420}
+    - Class: 114
+      Script: {instanceID: 18588}
+    - Class: 114
+      Script: {instanceID: 21484}
+    - Class: 114
+      Script: {instanceID: 21840}
+    - Class: 114
+      Script: {instanceID: 22164}
+    - Class: 114
+      Script: {instanceID: 22488}
+    - Class: 114
+      Script: {instanceID: 22874}
+    - Class: 114
+      Script: {instanceID: 22924}
+    - Class: 114
+      Script: {instanceID: 23422}
+    - Class: 114
+      Script: {instanceID: 23874}
+    - Class: 114
+      Script: {instanceID: 101620}
+    - Class: 114
+      Script: {instanceID: 314064}
+    - Class: 114
+      Script: {instanceID: 314074}
+    - Class: 114
+      Script: {instanceID: 358010}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Gems.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -310,8 +496,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17522}
     - Class: 114
-      Script: {instanceID: 17914}
-    - Class: 114
       Script: {instanceID: 18108}
     - Class: 114
       Script: {instanceID: 18386}
@@ -336,19 +520,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22164}
     - Class: 114
-      Script: {instanceID: 22290}
+      Script: {instanceID: 22292}
     - Class: 114
-      Script: {instanceID: 22486}
+      Script: {instanceID: 22488}
     - Class: 114
-      Script: {instanceID: 22872}
+      Script: {instanceID: 22874}
     - Class: 114
-      Script: {instanceID: 22922}
+      Script: {instanceID: 22924}
     - Class: 114
-      Script: {instanceID: 23870}
+      Script: {instanceID: 23874}
     - Class: 114
-      Script: {instanceID: 24170}
+      Script: {instanceID: 24174}
     - Class: 114
-      Script: {instanceID: 24354}
+      Script: {instanceID: 24358}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -394,6 +578,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -435,6 +623,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 21216}
     - Class: 114
+      Script: {instanceID: 21384}
+    - Class: 114
       Script: {instanceID: 21438}
     - Class: 114
       Script: {instanceID: 21484}
@@ -443,11 +633,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22164}
     - Class: 114
-      Script: {instanceID: 22486}
+      Script: {instanceID: 22174}
     - Class: 114
-      Script: {instanceID: 22922}
+      Script: {instanceID: 22488}
     - Class: 114
-      Script: {instanceID: 23688}
+      Script: {instanceID: 22924}
+    - Class: 114
+      Script: {instanceID: 23690}
+    - Class: 114
+      Script: {instanceID: 24426}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -568,41 +762,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22124}
     - Class: 114
-      Script: {instanceID: 22472}
+      Script: {instanceID: 22474}
     - Class: 114
-      Script: {instanceID: 22486}
+      Script: {instanceID: 22488}
     - Class: 114
-      Script: {instanceID: 22574}
+      Script: {instanceID: 22576}
     - Class: 114
-      Script: {instanceID: 22580}
+      Script: {instanceID: 22582}
     - Class: 114
-      Script: {instanceID: 22728}
+      Script: {instanceID: 22730}
     - Class: 114
-      Script: {instanceID: 22772}
+      Script: {instanceID: 22774}
     - Class: 114
-      Script: {instanceID: 22832}
+      Script: {instanceID: 22834}
     - Class: 114
-      Script: {instanceID: 22922}
+      Script: {instanceID: 22924}
     - Class: 114
-      Script: {instanceID: 22938}
+      Script: {instanceID: 22940}
     - Class: 114
-      Script: {instanceID: 23070}
+      Script: {instanceID: 23072}
     - Class: 114
-      Script: {instanceID: 23242}
+      Script: {instanceID: 23244}
     - Class: 114
-      Script: {instanceID: 23382}
+      Script: {instanceID: 23384}
     - Class: 114
-      Script: {instanceID: 23432}
+      Script: {instanceID: 23434}
     - Class: 114
-      Script: {instanceID: 23464}
+      Script: {instanceID: 23466}
     - Class: 114
-      Script: {instanceID: 23856}
+      Script: {instanceID: 23860}
     - Class: 114
-      Script: {instanceID: 24668}
+      Script: {instanceID: 24674}
     - Class: 114
-      Script: {instanceID: 25012}
+      Script: {instanceID: 25018}
     - Class: 114
-      Script: {instanceID: 217230}
+      Script: {instanceID: 74130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -988,7 +1182,7 @@ ScriptsOnlyBuild:
     className: GemAnimDestroy
   - hash:
       serializedVersion: 2
-      Hash: 904789ca817fe5c3c483539006843f2c
+      Hash: 26cc2218657170502a525ba4dd78ebb9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CubeSettings
@@ -1054,7 +1248,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerEnumField
   - hash:
       serializedVersion: 2
-      Hash: 60740e1143c0796204bb4370006e3f63
+      Hash: c3c2d47741c781f0f9657fe54c90f2c5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LevelGame
@@ -1324,7 +1518,7 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 83fea932659a6edd4a5d5d20e00235cd
+      Hash: e952e277e23da74160fe3f57623daf98
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RegisterName
@@ -1654,6 +1848,12 @@ ScriptsOnlyBuild:
     className: Benchmark02
   - hash:
       serializedVersion: 2
+      Hash: 1a9a08009b71105175851f343f113155
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioController
+  - hash:
+      serializedVersion: 2
       Hash: 9eed3a1d470d876639f40279f90aee51
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1852,7 +2052,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerEnterMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 8bb75990417a7a144267abd4a95cb24c
+      Hash: c2033212d72050656e36aedd55ef35a5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlatformGenerator
@@ -1928,6 +2128,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: DizactivInfo
+  - hash:
+      serializedVersion: 2
+      Hash: 737cfd444fe3a9531fd5d8daf284c39f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UIUpdate
   - hash:
       serializedVersion: 2
       Hash: 6a0b5b415c00f783202fd1ae2d556cb2
@@ -2024,6 +2230,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ParametrsNPC
+  - hash:
+      serializedVersion: 2
+      Hash: fa56b6554cd3a4681742bba20e9610a6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Sound
   - hash:
       serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
@@ -2150,9 +2362,34 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 2cf3f811e7474267f40fea7f4bd3679a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameColor
+  - hash:
+      serializedVersion: 2
+      Hash: f7e8f5812c17bfc67a889ed490fa8829
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EndGame
+  - hash:
+      serializedVersion: 2
+      Hash: 18eb32a1d53e8a705c5ce86c849032c4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PauseGame
+  - hash:
+      serializedVersion: 2
+      Hash: d6f64ce8dcb74ce5cda6922ba736b46a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioGame
   platform: 13
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/MenuGame.unity
   - Assets/Scenes/Gems.unity
-  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.30/0.30.apk
+  - Assets/Scenes/Color.unity
+  playerPath: E:/fails/iT/Project/Diplom/BuildAndroid/Ver 0.39/0.39.apk

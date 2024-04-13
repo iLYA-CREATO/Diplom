@@ -1,4 +1,4 @@
-#Mon Apr 08 21:31:21 MSK 2024
+#Sat Apr 13 23:57:36 MSK 2024
 base.0=C\:\\Users\\TGS\\Desktop\\Git\\Diplom\\Diplom\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

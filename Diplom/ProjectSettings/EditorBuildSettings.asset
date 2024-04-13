@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gems.unity
     guid: f3ebc9fe28e109c4f82a5f8ec1693a3d
+  - enabled: 1
+    path: Assets/Scenes/Color.unity
+    guid: b6fea5e19c2c31d4dadaa4bfca308abf
   m_configObjects: {}

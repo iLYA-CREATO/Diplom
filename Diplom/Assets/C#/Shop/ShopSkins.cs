@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -36,7 +37,15 @@ public class ShopSkins : MonoBehaviour
     public bool SkinsGetStelsWit = false;
     public List<int> MoneySkin;
 
-
+    public void OnEnable()
+    {
+        GetSaveBuySkins();
+        RegButtonFunk();
+    }
+    private void OnDisable()
+    {
+        SaveBuySkins();
+    }
     public void Start()
     {
         Skins[IdSkin].SetActive(true);
@@ -72,6 +81,8 @@ public class ShopSkins : MonoBehaviour
                     {
                         SkinsBuyYelloStane = true;
                         _Wallet.Gem -= MoneySkin[IdSkin];
+                        _Wallet.OutText();
+                        SaveBuySkins(); // Сохраняем покупку
                     }
                     else
                     {
@@ -87,6 +98,8 @@ public class ShopSkins : MonoBehaviour
                     {
                         SkinsBuyDarSoul = true;
                         _Wallet.Gem -= MoneySkin[IdSkin];
+                        _Wallet.OutText();
+                        SaveBuySkins(); // Сохраняем покупку
                     }
                     else
                     {
@@ -101,6 +114,8 @@ public class ShopSkins : MonoBehaviour
                     {
                         SkinsBuyStelsWit = true;
                         _Wallet.Gem -= MoneySkin[IdSkin];
+                        _Wallet.OutText();
+                        SaveBuySkins(); // Сохраняем покупку
                     }
                     else
                     {
@@ -159,11 +174,6 @@ public class ShopSkins : MonoBehaviour
         }
         SaveIdScin();
     }
-
-    public void Update()
-    {
-        RegButtonFunk();
-    }
     public void RegButtonFunk()
     {
         switch (IdSkin)
@@ -185,6 +195,7 @@ public class ShopSkins : MonoBehaviour
             case 1:
                 if (SkinsBuyYelloStane == true && SkinsGetYelloStane == true) // Если выбран
                 {
+                    TextMoneyObject.SetActive(false);
                     TextButton.text = "Выбран";
                 }
                 else if (SkinsBuyYelloStane == true) // Если куплен
@@ -261,5 +272,52 @@ public class ShopSkins : MonoBehaviour
             IdGetSkins = 3;
         }
         PlayerPrefs.SetInt("IdGetSkin", IdGetSkins);
+    }
+
+    // Сохранение 
+
+     int _SkinsBuyGiryd = 0;
+     int _SkinsBuyYelloStane = 0;
+     int _SkinsBuyDarSoul = 0;
+     int _SkinsBuyStelsWit = 0;
+
+     int _SkinsGetGiryd = 0;
+     int _SkinsGetYelloStane = 0;
+     int _SkinsGetDarSoul = 0;
+     int _SkinsGetStelsWit = 0;
+    public void SaveBuySkins()
+    {
+        _SkinsBuyGiryd = Convert.ToInt32(SkinsBuyGiryd);
+        _SkinsBuyYelloStane = Convert.ToInt32(SkinsBuyYelloStane);
+        _SkinsBuyDarSoul = Convert.ToInt32(SkinsBuyDarSoul);
+        _SkinsBuyStelsWit = Convert.ToInt32(SkinsBuyStelsWit);
+
+        PlayerPrefs.SetInt("SkinsBuyGiryd", _SkinsBuyGiryd);
+        PlayerPrefs.SetInt("SkinsBuyYelloStane", _SkinsBuyYelloStane);
+        PlayerPrefs.SetInt("SkinsBuyDarSoul", _SkinsBuyDarSoul);
+        PlayerPrefs.SetInt("SkinsBuyStelsWit", _SkinsBuyStelsWit);
+        Debug.Log("Сохраняем: " + _SkinsBuyGiryd + " " + _SkinsBuyYelloStane + " " + _SkinsBuyDarSoul + " " + _SkinsBuyStelsWit + " ");
+    }
+
+    public void GetSaveBuySkins()
+    {
+        if (PlayerPrefs.HasKey("SkinsBuyGiryd"))
+        {
+            _SkinsBuyGiryd = PlayerPrefs.GetInt("SkinsBuyGiryd");
+        }
+        else
+        {
+            _SkinsBuyGiryd = 1;
+        }
+        _SkinsBuyYelloStane = PlayerPrefs.GetInt("SkinsBuyYelloStane");
+        _SkinsBuyDarSoul = PlayerPrefs.GetInt("SkinsBuyDarSoul");
+        _SkinsBuyStelsWit = PlayerPrefs.GetInt("SkinsBuyStelsWit");
+
+        SkinsBuyGiryd = Convert.ToBoolean(_SkinsBuyGiryd);
+        SkinsBuyYelloStane = Convert.ToBoolean(_SkinsBuyYelloStane);
+        SkinsBuyDarSoul = Convert.ToBoolean(_SkinsBuyDarSoul);
+        SkinsBuyStelsWit = Convert.ToBoolean(_SkinsBuyStelsWit);
+        Debug.Log("Получаем : " + SkinsBuyGiryd + " " + SkinsBuyYelloStane + " " + SkinsBuyDarSoul + " " + SkinsBuyStelsWit + " ");
+        RegButtonFunk();
     }
 }

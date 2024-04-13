@@ -13,6 +13,11 @@ public class Wallet : MonoBehaviour
         TextGem.text = Gem.ToString();
     }
 
+    public void OutText()
+    {
+        TextGem.text = Gem.ToString();
+    }
+
     public void plusGem()
     {
         Gem += 100;
