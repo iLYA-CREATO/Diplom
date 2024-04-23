@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColorGem : MonoBehaviour
 {
     // Те кристалы которые игрок будет получать за прохождение той или иной волны
-    [SerializeField, Header("Гемы зи мини игру")] private int GemColor;
+    [SerializeField, Header("Гемы зи мини игру")] public int GemColor;
     [SerializeField, Header("Гемы зи мини игру")] private TextMeshProUGUI TextColor;
     [SerializeField, Header("Гемы зи мини игру")] private TextMeshProUGUI TextColorEndGame;
 

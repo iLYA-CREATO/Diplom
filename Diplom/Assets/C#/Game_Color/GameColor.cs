@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,31 +9,29 @@ public class GameColor : MonoBehaviour
 {
     public PlatformGenerator platformGenerator;
     public Color[] color;
-    [SerializeField, Header("")] private int StartTimer;
+    [SerializeField, Header("Таймер до начало игры")] private int StartTimer;
     [Space(5)]
-    [SerializeField, Header("")] private GameObject ImageColor;
-    [SerializeField, Header("")] private GameObject TextTimerToColor;
-    [SerializeField, Header("")] private GameObject TextTimerStartGame;
+    [SerializeField, Header("Объект картинки цвета")] private GameObject ImageColor;
+    [SerializeField, Header("Объект текста, таймера следующего цвета")] private GameObject TextTimerToColor;
+    [SerializeField, Header("Объект текста, таймера начало игры")] private GameObject TextTimerStartGame;
     [Space(5)]
-    [SerializeField, Header("")] private Image image;
-    [SerializeField, Header("")] private TextMeshProUGUI TextTimer;
-    [SerializeField, Header("")] private TextMeshProUGUI TextStartTimer;
+    [SerializeField, Header("Картинка")] private Image image;
+    [SerializeField, Header("Текст, таймер следующего цвета")] private TextMeshProUGUI TextTimer;
+    [SerializeField, Header("Текст, таймер  начало игры")] private TextMeshProUGUI TextStartTimer;
     [Space(5)]
-    [SerializeField, Header("")] private int Arr;
+    [SerializeField, Header("Рандомный цвет")] private int Arr;
 
-    public static Action RegenerateColor;
+    public static Action RegenerateColor;// Пересоздание зветов
     public static Action PlusGemVoln; // Получение гемов если игрок не упал
+
+    [SerializeField, Header("Звуковой эффект")] private Sound sound;
+
 
     private string[] ColorName = new string[]
     { "красный", "синий", "зелёный", "жёлтый",
         "фиолетовый", "розовый", "оранжевый", "белый", "черный", "коричневый", "серый", "голубой"
     };
 
-   /* private Color[] color = new Color[]
-    { "красный", "синий", "зелёный", "жёлтый",
-        "фиолетовый", "розовый", "оранжевый", "белый", "черный", "коричневый", "серый", "голубой"
-    };
-*/
     public void Start()
     {
         ImageColor.SetActive(false);
@@ -73,7 +72,8 @@ public class GameColor : MonoBehaviour
         for(int i = 5;  i != 0 ; i--)
         {
             TextTimer.text = i.ToString();
-            yield return new WaitForSecondsRealtime(1);
+            sound.PlaySound(sound.SoudDestroyCube);
+            yield return new WaitForSeconds(1);
         }
 
         for(int i = 0; i < platformGenerator.CubeList.Count; i++)
@@ -85,7 +85,7 @@ public class GameColor : MonoBehaviour
             }
         }
         TextTimerToColor.SetActive(false);
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSeconds(3);
         StartCoroutine (TimeReload());
     }
     // Передышка
@@ -107,7 +107,7 @@ public class GameColor : MonoBehaviour
         for (int i = 5; i != 0; i--)
         {
             TextStartTimer.text = i.ToString();
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSeconds(1);
         }
         PlusGemVoln?.Invoke();
         StartCoroutine(GanerateRandomColor());

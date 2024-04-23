@@ -37,14 +37,19 @@ public class ShopSkins : MonoBehaviour
     public bool SkinsGetStelsWit = false;
     public List<int> MoneySkin;
 
+    public GameObject LightScene;
+    
     public void OnEnable()
     {
         GetSaveBuySkins();
         RegButtonFunk();
+        OfOnLight();
     }
     private void OnDisable()
     {
         SaveBuySkins();
+        LightScene.SetActive(false);
+
     }
     public void Start()
     {
@@ -57,6 +62,7 @@ public class ShopSkins : MonoBehaviour
             IdSkin++;
             Skins[IdSkin].SetActive(true);
             Skins[IdSkin - 1].SetActive(false);
+            OfOnLight();
         }
     }
     public void BackSkin()
@@ -66,6 +72,55 @@ public class ShopSkins : MonoBehaviour
             IdSkin--;
             Skins[IdSkin].SetActive(true);
             Skins[IdSkin + 1].SetActive(false);
+            OfOnLight();
+        }
+    }
+
+    public void OfOnLight()
+    {
+        switch (IdSkin)
+        {
+            case 0:
+                if (SkinsBuyGiryd == false)
+                {
+                    LightScene.SetActive(false);
+                }
+                else
+                {
+                    LightScene.SetActive(true);
+                }
+                break;
+            case 1:
+                if (SkinsBuyYelloStane == false)
+                {
+                    LightScene.SetActive(false);
+                }
+                else
+                {
+                    LightScene.SetActive(true);
+                }
+                break;
+
+            case 2:
+                if (SkinsBuyDarSoul == false)
+                {
+                    LightScene.SetActive(false);
+                }
+                else
+                {
+                    LightScene.SetActive(true);
+                }
+                break;
+            case 3:
+                if (SkinsBuyStelsWit == false)
+                {
+                    LightScene.SetActive(false);
+                }
+                else
+                {
+                    LightScene.SetActive(true);
+                }
+                break;
         }
     }
     //Покупка скина
@@ -83,6 +138,7 @@ public class ShopSkins : MonoBehaviour
                         _Wallet.Gem -= MoneySkin[IdSkin];
                         _Wallet.OutText();
                         SaveBuySkins(); // Сохраняем покупку
+                        OfOnLight();
                     }
                     else
                     {
@@ -100,6 +156,7 @@ public class ShopSkins : MonoBehaviour
                         _Wallet.Gem -= MoneySkin[IdSkin];
                         _Wallet.OutText();
                         SaveBuySkins(); // Сохраняем покупку
+                        OfOnLight();
                     }
                     else
                     {
@@ -116,6 +173,7 @@ public class ShopSkins : MonoBehaviour
                         _Wallet.Gem -= MoneySkin[IdSkin];
                         _Wallet.OutText();
                         SaveBuySkins(); // Сохраняем покупку
+                        OfOnLight();
                     }
                     else
                     {
@@ -124,6 +182,8 @@ public class ShopSkins : MonoBehaviour
                 }
                 break;
         }
+
+        PlayerPrefs.SetInt("Gem", _Wallet.Gem);
     }
     //Выбор скина
     public void GetSkins()
@@ -321,3 +381,4 @@ public class ShopSkins : MonoBehaviour
         RegButtonFunk();
     }
 }
+

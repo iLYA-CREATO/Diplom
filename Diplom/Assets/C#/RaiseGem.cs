@@ -9,6 +9,7 @@ public class RaiseGem : MonoBehaviour
     public GemLocate gemLocate;
     public static event Action PlusGemRound;
     public ParametrsPlayer gemWallet;
+    [SerializeField, Header("Звуки")] private Sound sound;
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Gem")
@@ -16,6 +17,7 @@ public class RaiseGem : MonoBehaviour
             Debug.Log("Gem up");
             Destroy(other.gameObject);
             gemLocate.gemLocations.RemoveAll(item => item == null);
+            sound.PlaySound(sound.UpGem); // Звук поднятие гема
             gemWallet.GemRound++;
             PlusGemRound!.Invoke();
         }

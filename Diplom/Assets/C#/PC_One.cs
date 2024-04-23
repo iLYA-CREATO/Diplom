@@ -10,6 +10,9 @@ public class PC_One : MonoBehaviour
     public float speed;
     public FloatingJoystick FJostic;
     public Rigidbody rb;
+    public bool IsMin_x;
+    public bool GameTwo;
+
     public void Start()
     {
         // Проверка на включенный скин для подключения анимации
@@ -27,12 +30,25 @@ public class PC_One : MonoBehaviour
     }
     public void MovePlayer()
     {
-        rb.velocity = new Vector3(FJostic.Horizontal * speed * Time.deltaTime, rb.velocity.y, FJostic.Vertical * speed * Time.deltaTime);
-
-        if(FJostic.Horizontal != 0 ||  FJostic.Vertical != 0)
+        if (gameObject.transform.position.y < 10.4 && GameTwo == true)
         {
-            transform.rotation = Quaternion.LookRotation(rb.velocity);
-            animatorPlayer[AnimID].Play("Thyra_Run");
+            IsMin_x = false;
+        }
+
+        if (IsMin_x == true)
+        {
+            rb.velocity = new Vector3(FJostic.Horizontal * speed * Time.deltaTime, rb.velocity.y, FJostic.Vertical * speed * Time.deltaTime);
+        }
+
+        if (FJostic.Horizontal != 0 || FJostic.Vertical != 0)
+        {
+            if (IsMin_x == true)
+            {
+                transform.rotation = Quaternion.LookRotation(rb.velocity);
+                animatorPlayer[AnimID].Play("Thyra_Run");
+            }
+            
+            
         }
         else if (FJostic.Horizontal == 0 && FJostic.Vertical == 0)
         {

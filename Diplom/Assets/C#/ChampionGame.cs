@@ -64,6 +64,8 @@ public class ChampionGame : MonoBehaviour
 
     public void GemPlus()
     {
-        PlayerPrefs.SetInt("Gem", parametrsPlayer.GemRound);
+        int x = PlayerPrefs.GetInt("Gem");
+        x += parametrsPlayer.GemRound;
+        PlayerPrefs.SetInt("Gem", x);
     }
 }

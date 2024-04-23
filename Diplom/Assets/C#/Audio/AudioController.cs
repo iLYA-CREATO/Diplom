@@ -67,8 +67,8 @@ public class AudioController : MonoBehaviour
     // Сохранение настройки
     private void SaveAudioSattings()
     {
-        PlayerPrefs.SetFloat("SoundValueSlider", SliderMusic.value);
-        PlayerPrefs.SetFloat("MusicValueSlider", SliderSound.value);
+        PlayerPrefs.SetFloat("SoundValueSlider", SliderSound.value);
+        PlayerPrefs.SetFloat("MusicValueSlider", SliderMusic.value );
     }
 
     // Выгрузка сохранения 
